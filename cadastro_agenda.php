@@ -1,6 +1,7 @@
 <?php
 
     include("conexao.php");
+    
 
     $nome = $_POST['nome'];
     $apelido = $_POST['apelido'];
