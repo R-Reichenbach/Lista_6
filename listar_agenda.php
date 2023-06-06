@@ -13,7 +13,7 @@
     ?>
 
         <h1>Consulta de usuários</h1>
-        <table align="center" border="1" width="500">
+        <table align="center" border="1" width="500" >
             <tr>
                 <th>Nome</th>
                 <th>Apelido</th>
