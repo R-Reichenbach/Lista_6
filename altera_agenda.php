@@ -1,3 +1,11 @@
+<?php 
+    include('conexao.php');
+    
+    $id_agenda = $_GET['id_agenda'];
+    $sql = "select * from agenda where id_agenda = $id_agenda";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> 
     <h1>Cadastro de Usuários - IFSP</h1>
-    <form action="cadastro_agenda.php" method="POST" enctype="multipart/form-data">
+    <form action="altera_agenda_exe.php" method="POST" enctype="multipart/form-data">
+    <input name ="id_agenda" type="hidden" value="<?php echo $row['id_agenda']?>">
     
     <div>
         <label for="nome">Nome</label>
@@ -56,10 +65,8 @@
         <input type="text" name="email" id="email">
     </div>
 
-    <div>
-        <button type="submit" value="Salvar">Salvar</button>
-    </div>
 
+    <button type="submit">Alterar</button>
 </form>
 </body>
 </html>
