@@ -12,20 +12,26 @@
         $row = mysqli_fetch_array($result);
     ?>
 
+
+        
         <h1>Consulta de usuários</h1>
-        <table align="center" border="1" width="500" >
+
+        <table class="table table-bordered" align="center" border="1" width="500" >
+            <thead>
             <tr>
-                <th>Nome</th>
-                <th>Apelido</th>
-                <th>Endereco</th>
-                <th>Bairro</th>
-                <th>Cidade</th>
-                <th>Estado</th>
-                <th>Telefone</th>
-                <th>Celular</th>
-                <th>E-mail</th>
-                <th>Dt_cadastro</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Apelido</th>
+                <th scope="col">Endereco</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Celular</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Dt_cadastro</th>
             </tr>
+            </thead>
+    
             <?php
                 do{
                     echo "<td>".$row['nome']."</td>";
@@ -44,7 +50,7 @@
                     .$row['id_agenda']."'>Alterar</a></td>";
                     echo "</tr>";
                 }while($row = mysqli_fetch_array($result))
-            ?>
+            ?> 
             <a href="index.php">Voltar</a>
         </table>
 </body>
